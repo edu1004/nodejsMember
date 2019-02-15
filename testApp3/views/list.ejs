@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <%- include('menu')%>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>_ID</th>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>TEL</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% JSON.parse(datas).forEach(function(vo,index){ %>
+          <tr>
+            <td><a href="update?_id=<%=vo._id %>"><%=vo._id %></a></td>
+            <td><%=vo.id %></td>
+            <td><%=vo.name %></td>
+            <td><%=vo.tel %></td>
+            <td><a href="deleteOK?_id=<%=vo._id %>">deleteOK</a></td>
+          </tr>
+        <% }); %>
+      </tbody>
+
+    </table>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset=utf-8>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  <title><%=title%></title>
+</head>
+<body>
+  <%- include('menu')%>
+
+
+  <form action="updateOK" method="post">
+    <%  var vo = JSON.parse(vo);%>
+    <label>_ID:</label><%=  vo._id %>
+    <input type="hidden" name="_id" value="<%=  vo._id %>"><br>
+    <label>ID:</label><input type="text" name="id" value="<%= vo.id %>"><br>
+    <label>NAME:</label><input type="text" name="name" value="<%= vo.name %>"><br>
+    <label>TEL:</label><input type="text" name="tel" value="<%= vo.tel %>"><br>
+
+    <input type="submit" value="send">
+  </form>
+
+
+</body>
+</html>
